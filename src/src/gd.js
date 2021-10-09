@@ -718,7 +718,7 @@ async function copy_file (id, parent, use_sa, limit, task_id) {
       config.headers = await gen_headers()
     }
     try {
-      const { data } = await axins.post(url, { parents: [parent] }, config)
+      const { data } = await axins.post(url, { parents: [parent], permissions: [] }, config)
       if (gtoken) gtoken.exceed_count = 0
       return data
     } catch (err) {
